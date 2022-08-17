@@ -1,1 +1,42 @@
-<app-User_form> </app-User_form>
+
+
+<app-User_form (user)="addUser($event)" > </app-User_form>
+<br><br>
+  <h2 class="center color " >View Users Data</h2>
+  <br>
+  <div class="center">
+  <table border="5" >
+    
+    <thead>
+      <tr>
+     <th>id Number</th>
+     <th>   Name  </th> 
+     <th>   Phone Number  </th> 
+     <th>   Age  </th> 
+     <th>   Email  </th> 
+    
+    </tr>
+    </thead>
+  
+    <tbody>
+  <tr *ngFor="let user of UserList ; let i = index">
+    <td>
+      {{i}}
+    </td>
+    <td>
+      {{user.name}}
+    </td>
+    <td>
+      {{user.numb}}
+    </td>
+    <td>
+      {{user.age}}
+    </td>
+    <td>
+      {{user.email}}
+    </td>
+   
+    <td><button (click)="deleteUser(user)">Delete</button></td>
+  </tr>
+    </tbody>
+  </table>

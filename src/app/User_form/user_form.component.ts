@@ -1,14 +1,8 @@
-import { Component, OnInit, Output, Input } from "@angular/core";
-import { Form, NgForm } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { NgForm } from '@angular/forms';
+import { UserVM } from '../app.component';
 
 
-interface UserVM{
-  name: string,
-  numb: number,
-   age: number, 
-   email:string,
-   pass:number;
-}
 
 @Component({
     selector: 'app-User_form',
@@ -19,44 +13,25 @@ interface UserVM{
  
 export class user_formComponent implements OnInit {
   
-  
-  @Input() public newUser: UserVM ={name:'', numb:0, age: 0, email:'', pass:0 }
-  @Input() UserList: UserVM[]=[
-    {
-      name:'Aya ',
-      numb: 597902289,
-      age: 22,
-      email:'aya@gmail.com',
-      pass:12345
-  },
-  {
-    name:'Bayan  ',
-    numb: 597511401,
-    age: 16,
-    email:'bayan@gmail.com',
-    pass:123123
-}
-   ];
+  newUser: UserVM ={name:'', numb:0, age: 0, email:'', pass:0 }
+  @Output() user = new EventEmitter<UserVM>();
 
   constructor() { }
   ngOnInit(): void {
   }
+
   addUser(form: NgForm){
     console.log(form.form.value,this.newUser);
     if(!form.form.valid){
       form.form.markAllAsTouched();
     }else{
-      this.UserList.push(this.newUser);
+      this.user.emit(this.newUser);
     }
   }
-  deleteUser(user:UserVM){
-    let i = this.UserList.indexOf(user);
-    if (i>= 0){
-      this.UserList.splice(i,1);
-    }
+  
   }
   
 
  
 
-}
+
