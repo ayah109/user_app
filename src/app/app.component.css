@@ -9,3 +9,56 @@
     font-style: italic;
     font-family: Courier New, monospace;
 }
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    max-width: device-width;
+    min-height: 81vh;
+      
+  }
+  
+  .flex-container > div {
+    
+    width: 200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 0.5px solid black;
+    justify-content: center;
+  }
+  
+  .main{
+      background-color: #FCF3CF;
+      font-size: 25px;
+      flex: 2 2;
+      text-align: center;        
+  }
+  
+  .left{
+      background-color:#AED6F1;
+      font-size: 19px;
+      
+  }
+  
+  .head{
+    flex-grow: 1;
+    height: 50px;
+    font-size: 4ch;
+    border: 0.5px solid black;
+    background-color: #E5E7E9 ;
+  
+  }
+  .footer{
+    border: 0.5px solid black;
+    background-color: #1A5276;
+    height: 60px;
+    
+  }
+  body{
+      margin: 0;
+      padding: 0;
+      overflow: scroll;
+  }
+  .text{
+      display: flex;
+      align-items: center;
+  }

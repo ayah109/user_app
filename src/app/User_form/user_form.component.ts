@@ -1,8 +1,14 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 import { NgForm } from '@angular/forms';
-import { UserVM } from '../app.component';
+//import { UserVM } from './User_list/user_list.component';
 
-
+export interface UserVM{
+  name: string,
+  numb: number,
+   age: number, 
+   email:string,
+   pass:number;
+}
 
 @Component({
     selector: 'app-User_form',
@@ -13,9 +19,11 @@ import { UserVM } from '../app.component';
  
 export class user_formComponent implements OnInit {
   
-  newUser: UserVM ={name:'', numb:0, age: 0, email:'', pass:0 }
+  //newUser: UserVM ={name:'', numb:0, age: 0, email:'', pass:0 }
   @Output() user = new EventEmitter<UserVM>();
-
+  @Input() newUser: UserVM ={name:'', numb:0, age: 0, email:'', pass:0 }
+  //@Input() Ubdated: UserVM={name:'', numb:0, age: 0, email:'', pass:0 };
+  
   constructor() { }
   ngOnInit(): void {
   }
@@ -28,6 +36,14 @@ export class user_formComponent implements OnInit {
       this.user.emit(this.newUser);
     }
   }
+
+//   UbdateUser(form: NgForm){
+//     this.Ubdated.name = this.newUser.name;
+//     this.Ubdated.numb = this.newUser.numb;
+//     this.Ubdated.age = this.newUser.age;
+//     this.Ubdated.email = this.newUser.email;
+//     this.Ubdated.pass = this.newUser.pass;
+// }
   
   }
   
