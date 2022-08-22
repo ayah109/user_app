@@ -1,17 +1,21 @@
 <div >
 <form #form =ngForm (ngSubmit) ="addUser(form)">
-  
+
   <br>
     <label for="name">Name </label><br>
     <input  [(ngModel)]="newUser.name" name="name" required type="text">
     <span *ngIf="form.form.controls['name']?.touched && ! form.form.controls['name']?.valid" class="error"> Required </span><br>
   <br>
-  
+
     <label for="numb">Phone Number</label><br>
     <input [(ngModel)]="newUser.numb" name="numb" type="number"><br>
+<!--  <br>-->
+<!--    <label for="age">Age</label><br>-->
+<!--    <input [(ngModel)]="newUser.age" name="age" type="number" ><br>-->
+<!--  <br>-->
   <br>
-    <label for="age">Age</label><br>
-    <input [(ngModel)]="newUser.age" name="age" type="number" ><br>
+  <label for="birthdate">Birthdate</label><br>
+  <input [(ngModel)]="newUser.bairthDate" name="birthdate" type="Date" ><br>
   <br>
     <label for="email">Email</label><br>
     <input [(ngModel)]="newUser.email" name="email" email required type="email">
@@ -25,4 +29,3 @@
     <!-- <button (user)="UbdateUser($event)"> Ubdate </button> -->
   </form>
   </div>
- 

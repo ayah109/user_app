@@ -2,25 +2,29 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
-import { Route, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app_route.module';
-import { UserRoutingModule } from './User/User_route.module';
-import { user_formComponent } from './User/User_form/user_form.component';
-import { user_listComponent } from './User/User_list/user_list.component';
+import {UserPipePipe} from "./userPipe.pipe";
 
 
 @NgModule({
   declarations: [
-    AppComponent
-    
+    AppComponent,
+    UserPipePipe
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
-   
+    AppRoutingModule,
+
   ],
+
   providers: [],
+  exports: [
+    UserPipePipe
+
+  ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
