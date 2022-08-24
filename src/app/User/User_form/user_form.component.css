@@ -10,8 +10,39 @@
     font-family: Courier New, monospace;
 }
 .error{
-    
     color: red;
-    
-    
+  font-size: 1ch;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #716F6F;
+  box-sizing: border-box;
+  /*margin-top: 3px;*/
+  margin-bottom: 11px;
+  height: 30px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: black;
+  color: white;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 8fr ;
+}
+.button {
+  background-color: #778899;
+  border: none;
+  color: white;
+  padding: 8px 35px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius:5px;
+  cursor: pointer;
+
 }

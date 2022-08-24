@@ -1,22 +1,27 @@
 
 <body>
-    <div class="head">
-        User Application  
-        
+    <div class="head text">
+        APP LOGO
+
     </div>
-    
+
     <div class="flex-container">
-        <div class="left text ">
-            <button routerLink="/User/list">
-                User List
-            </button></div>
+        <div class="left">
+          <div class="sidebar">
+            <a  routerLink="/User/list">Users</a>
+            <a >Posts</a>
+            <a >settings</a>
+          </div>
+        </div>
 
         <div class="main text">
+          <div class="box" >
             <router-outlet></router-outlet>
-             </div> 
-      
+             </div>
+        </div>
       </div>
+
     <!-- <footer class="footer"> -->
       <!-- </footer> -->
-    
+
 </body>

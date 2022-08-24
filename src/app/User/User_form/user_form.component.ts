@@ -13,7 +13,7 @@ import { UserService, UserVM } from "src/app/User.service";
 
 export class user_formComponent implements OnInit {
 
-  public newUser: UserVM ={name:'', numb:0, age: 0,bairthDate:new Date(), email:'', pass:0 }
+  newUser: UserVM ={first_Name:'', last_Name:'',numb: 0, age: 0, bairthDate:new Date(), email:'', pass:0 }
 
 
   constructor(private obj :UserService, public routering :Router) { }
@@ -22,12 +22,12 @@ export class user_formComponent implements OnInit {
   }
 
   addUser(form: NgForm){
-    if(!form.form.valid){
-      form.form.markAllAsTouched();
-    }else{
-      this.obj.UserList.push(this.newUser);
-      this.routering.navigate(['/User/list'])
-    }
+    // if(!form.form.valid){
+    //   form.form.markAllAsTouched();
+    // }else{
+    //   this.obj.UserList.push(this.newUser);
+    //   this.routering.navigate(['/User/list'])
+    // }
   }
   }
 

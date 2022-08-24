@@ -1,31 +1,25 @@
 <div >
-<form #form =ngForm (ngSubmit) ="addUser(form)">
+  <form #form =ngForm (ngSubmit) ="addUser(form)">
+    <div class="wrapper">
+      <div>
+        <label for="first_name"> Name </label><br><br>
+        <label for="birthdate">Date of Birth</label><br><br>
+        <label for="email">Email</label><br><br>
+        <label for="pass">password</label><br><br>
 
-  <br>
-    <label for="name">Name </label><br>
-    <input  [(ngModel)]="newUser.name" name="name" required type="text">
-    <span *ngIf="form.form.controls['name']?.touched && ! form.form.controls['name']?.valid" class="error"> Required </span><br>
-  <br>
+      </div>
+      <div>
+        <input [(ngModel)]="newUser.first_Name" name="name" required type="text">
+        <span *ngIf="form.form.controls['first_name']?.touched && ! form.form.controls['first_name']?.valid" class="error"> Required </span><br>
+        <input [(ngModel)]="newUser.bairthDate" name="birthdate" type="Date" >
+        <input [(ngModel)]="newUser.email" name="email" email required type="email">
+        <span *ngIf="form.form.controls['email']?.touched && ! form.form.controls['email']?.valid" class="error">{{form.form.controls['email'].errors}} Required </span> <br>
+        <input [(ngModel)]="newUser.pass" name="pass" required type="password">
+        <span *ngIf="form.form.controls['pass']?.touched && ! form.form.controls['pass']?.valid" class="error"> Required </span><br>
+        <button class="button" type="submit"> Add </button>
 
-    <label for="numb">Phone Number</label><br>
-    <input [(ngModel)]="newUser.numb" name="numb" type="number"><br>
-<!--  <br>-->
-<!--    <label for="age">Age</label><br>-->
-<!--    <input [(ngModel)]="newUser.age" name="age" type="number" ><br>-->
-<!--  <br>-->
-  <br>
-  <label for="birthdate">Birthdate</label><br>
-  <input [(ngModel)]="newUser.bairthDate" name="birthdate" type="Date" ><br>
-  <br>
-    <label for="email">Email</label><br>
-    <input [(ngModel)]="newUser.email" name="email" email required type="email">
-    <span *ngIf="form.form.controls['email']?.touched && ! form.form.controls['email']?.valid" class="error">{{form.form.controls['email'].errors}} Required </span> <br>
-  <br>
-    <label for="pass">password</label><br>
-    <input [(ngModel)]="newUser.pass" name="pass" required type="password">
-    <span *ngIf="form.form.controls['pass']?.touched && ! form.form.controls['pass']?.valid" class="error"> Required </span> <br><br>
-  <br>
-    <button type="submit"> Add User</button> <br><br>
-    <!-- <button (user)="UbdateUser($event)"> Ubdate </button> -->
+      </div>
+    </div>
   </form>
-  </div>
+</div>
+

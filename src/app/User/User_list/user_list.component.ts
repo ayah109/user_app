@@ -11,7 +11,9 @@ import { UserService, UserVM } from 'src/app/User.service';
 })
 
 export class user_listComponent {
-  users :{ name: string,
+  users :{
+    first_Name:string,
+    last_Name:string,
     numb: number,
      age: number,
     bairthDate:Date,
@@ -19,22 +21,33 @@ export class user_listComponent {
      pass:number;}[]=[];
 
   constructor(private obj :UserService ,  public routering :Router) { }
+  public UserList = new Array<any>();
   ngOnInit(): void {
-    this.users=this.obj.UserList;
+    this.obj.getUser().subscribe(res=>
+    {
+     console.log(res)
+      this.UserList = res;
+    });
   }
 
-   user: UserVM = { name: '', numb: 0, age: 0, bairthDate:new Date(),email: '', pass: 0 };
+   user: UserVM = { first_Name:'', last_Name:'',numb: 0, age: 0, bairthDate:new Date(), email:'', pass:0 };
 
+  // console.log(localStorage.getItem("token"));
 
-   addUser(user: UserVM) {
-    this.obj.UserList.push(user);
+   addUser(users: UserVM) {
+     this.obj.postUser(users).subscribe(res=>
+     {
+       console.log(res)
+       this.user = res;
+     });
+
   }
 
    deleteUser(user:UserVM){
-    let i = this.obj.UserList.indexOf(user);
-    if (i>= 0){
-      this.obj.UserList.splice(i,1);
-    }
+    // let i = this.obj.UserList.indexOf(user);
+    // if (i>= 0){
+    //   this.obj.UserList.splice(i,1);
+    // }
 }
 
 EditUser(user:UserVM){

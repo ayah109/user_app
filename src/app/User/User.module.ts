@@ -4,19 +4,20 @@ import { CommonModule } from '@angular/common';
 import { user_listComponent } from './User_list/user_list.component';
 import { user_formComponent } from './User_form/user_form.component';
 import { UserRoutingModule } from './User_route.module';
-import {AppModule} from "../app.module";
+import {UserPipePipe} from "../userPipe.pipe";
 
 @NgModule({
   declarations: [
     user_formComponent,
-    user_listComponent
+    user_listComponent,
+    UserPipePipe
+
   ],
 
   imports: [
     FormsModule,
     CommonModule,
-    UserRoutingModule,
-    AppModule
+    UserRoutingModule
   ],
 
 })

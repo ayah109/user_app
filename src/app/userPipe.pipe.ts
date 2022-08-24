@@ -15,7 +15,7 @@ export class UserPipePipe implements PipeTransform {
         var age= Math.floor((timeDiff / (1000 * 3600 * 24))/365);
         return age;
       }
-      return ;
+      return 0 ;
     }
 
   }
