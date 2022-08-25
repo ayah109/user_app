@@ -1,19 +1,23 @@
-<div >
+<a>Add User</a><br><br>
+<div class="box" >
   <form #form =ngForm (ngSubmit) ="addUser(form)">
     <div class="wrapper">
       <div>
-        <label for="first_name"> Name </label><br><br>
+        <label class="required" for="first_name"> Name </label><br><br>
         <label for="birthdate">Date of Birth</label><br><br>
-        <label for="email">Email</label><br><br>
-        <label for="pass">password</label><br><br>
+        <label class="required" for="email">Email</label><br><br>
+        <label class="required" for="pass">password</label><br><br>
 
       </div>
       <div>
         <input [(ngModel)]="newUser.first_Name" name="name" required type="text">
         <span *ngIf="form.form.controls['first_name']?.touched && ! form.form.controls['first_name']?.valid" class="error"> Required </span><br>
+
         <input [(ngModel)]="newUser.bairthDate" name="birthdate" type="Date" >
+
         <input [(ngModel)]="newUser.email" name="email" email required type="email">
         <span *ngIf="form.form.controls['email']?.touched && ! form.form.controls['email']?.valid" class="error">{{form.form.controls['email'].errors}} Required </span> <br>
+
         <input [(ngModel)]="newUser.pass" name="pass" required type="password">
         <span *ngIf="form.form.controls['pass']?.touched && ! form.form.controls['pass']?.valid" class="error"> Required </span><br>
         <button class="button" type="submit"> Add </button>
@@ -21,5 +25,30 @@
       </div>
     </div>
   </form>
+</div>
+<div>
+<!--  <form #form =ngForm (ngSubmit) ="EditUser(form)">-->
+<!--    <div class="wrapper">-->
+<!--      <div>-->
+<!--        <label class="required" for="first_name"> Name </label><br><br>-->
+<!--        <label for="birthdate">Date of Birth</label><br><br>-->
+<!--        <label class="required" for="email">Email</label><br><br>-->
+
+
+<!--      </div>-->
+<!--      <div>-->
+<!--        <input [(ngModel)]="newUser.first_Name" name="name" required type="text">-->
+<!--        <span *ngIf="form.form.controls['first_name']?.touched && ! form.form.controls['first_name']?.valid" class="error"> Required </span><br>-->
+
+<!--        <input [(ngModel)]="newUser.bairthDate" name="birthdate" type="Date" >-->
+
+<!--        <input [(ngModel)]="newUser.email" name="email" email required type="email">-->
+<!--        <span *ngIf="form.form.controls['email']?.touched && ! form.form.controls['email']?.valid" class="error">{{form.form.controls['email'].errors}} Required </span> <br>-->
+
+
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </form>-->
 </div>
 

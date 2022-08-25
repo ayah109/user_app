@@ -1,0 +1,48 @@
+<div class="wrapper">
+  <div></div>
+
+
+  <div >
+    <div class="box1 wrapper1">
+
+      <div >
+        <textarea rows = "5" cols = "90" name = "posts">
+            Add your post
+         </textarea><br>
+
+      </div>
+      <br>
+      <div class="wrapper2">
+        <button class="button">Share</button>
+      </div>
+
+
+    </div>
+    <br>
+    <a>Posts</a>
+    <br>
+    <br>
+    <div class="box1">
+    <div  *ngFor = "let post of PostList" >
+      <div>{{post.title}}</div><br>
+      <div>{{post.CreatDate}}</div>
+
+
+    </div>
+    </div><br>
+    <div class="box2">
+      this is a new post <br>
+      <p class="date">
+      {{post.CreatDate|date }}
+      </p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div></div>
+</div>

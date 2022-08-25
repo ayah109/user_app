@@ -34,15 +34,11 @@ input[type=submit] {
   display: grid;
   grid-template-columns: 1fr 8fr ;
 }
-.button {
-  background-color: #778899;
-  border: none;
-  color: white;
-  padding: 8px 35px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius:5px;
-  cursor: pointer;
-
+a{
+  font-size: 2.5ch;
+  font-family: "Arial Black";
+}
+.required:after {
+  content:" *";
+  color: red;
 }

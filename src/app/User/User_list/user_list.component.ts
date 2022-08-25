@@ -12,6 +12,7 @@ import { UserService, UserVM } from 'src/app/User.service';
 
 export class user_listComponent {
   users :{
+    id:number,
     first_Name:string,
     last_Name:string,
     numb: number,
@@ -22,7 +23,9 @@ export class user_listComponent {
 
   constructor(private obj :UserService ,  public routering :Router) { }
   public UserList = new Array<any>();
+
   ngOnInit(): void {
+
     this.obj.getUser().subscribe(res=>
     {
      console.log(res)
@@ -30,7 +33,7 @@ export class user_listComponent {
     });
   }
 
-   user: UserVM = { first_Name:'', last_Name:'',numb: 0, age: 0, bairthDate:new Date(), email:'', pass:0 };
+   user: UserVM = { id:0, first_Name:'', last_Name:'', numb: 0, age: 0, bairthDate:new Date(), email:'', pass:0 };
 
   // console.log(localStorage.getItem("token"));
 
@@ -44,10 +47,10 @@ export class user_listComponent {
   }
 
    deleteUser(user:UserVM){
-    // let i = this.obj.UserList.indexOf(user);
-    // if (i>= 0){
-    //   this.obj.UserList.splice(i,1);
-    // }
+    let i = this.UserList.indexOf(user);
+    if (i>= 0){
+      this.UserList.splice(i,1);
+    }
 }
 
 EditUser(user:UserVM){

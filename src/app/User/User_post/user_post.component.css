@@ -1,0 +1,46 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr ;
+
+}
+a{
+  font-size: 2ch;
+  font-family: "Arial Black";
+}
+.box1{
+  width: border-box;
+  height:130px;
+  padding: 20px;
+  border: 1px solid white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.box2{
+  width: border-box;
+  height: 50px;
+  padding: 20px;
+  border: 1px solid white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#overflowTest {
+
+  overflow-y: scroll;
+
+}
+
+.wrapper1 {
+  display: grid;
+}
+.wrapper2 {
+  display: grid;
+  grid-template-columns: 1fr 5fr ;
+
+}
+textarea{
+  border: none;
+
+}
+.date{
+  font-size: 14px;
+  color: #716F6F;
+
+}

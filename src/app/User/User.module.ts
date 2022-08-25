@@ -5,11 +5,13 @@ import { user_listComponent } from './User_list/user_list.component';
 import { user_formComponent } from './User_form/user_form.component';
 import { UserRoutingModule } from './User_route.module';
 import {UserPipePipe} from "../userPipe.pipe";
+import {user_postComponent} from "./User_post/user_post.compnent";
 
 @NgModule({
   declarations: [
     user_formComponent,
     user_listComponent,
+    user_postComponent,
     UserPipePipe
 
   ],
